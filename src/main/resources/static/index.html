@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Store Management System</h1>
+    <nav>
+        <button onclick="showAddProductModal()">Add Product</button>
+        <button onclick="showAllProducts()">Show All Products</button>
+        <button onclick="showFindProductModal()">Find by Brand</button>
+        <button onclick="showSearchByPriceModal()">Search by Price Range</button>
+        <button onclick="sortProductsByPrice()">Sort by Price</button>
+    </nav>
+</header>
+
+<main>
+    <section id="productList" class="product-list"></section>
+</main>
+
+<!-- Modal for Add/Edit Product -->
+<div id="addProductModal" class="modal">
+    <div class="modal-content">
+        <h2>Add Product</h2>
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="text" id="productBrand" placeholder="Brand">
+        <input type="text" id="productCategory" placeholder="Category">
+        <input type="number" id="productPrice" placeholder="Price">
+        <textarea id="productDescription" placeholder="Description"></textarea>
+        <input type="text" id="productImage" placeholder="Image File Name">
+        <button onclick="addProduct()">Submit</button>
+        <button onclick="closeModal('addProductModal')">Close</button>
+    </div>
+</div>
+
+<!-- Modal for Find Product by Brand -->
+<div id="findProductModal" class="modal">
+    <div class="modal-content">
+        <h2>Find Products by Brand</h2>
+        <input type="text" id="findBrand" placeholder="Enter Brand">
+        <button onclick="findProductByBrand()">Search</button>
+        <button onclick="closeModal('findProductModal')">Close</button>
+    </div>
+</div>
+
+<!-- Modal for Search by Price Range -->
+<div id="searchByPriceModal" class="modal">
+    <div class="modal-content">
+        <h2>Search by Price Range</h2>
+        <input type="number" id="minPrice" placeholder="Min Price">
+        <input type="number" id="maxPrice" placeholder="Max Price">
+        <button onclick="searchByPriceRange()">Search</button>
+        <button onclick="closeModal('searchByPriceModal')">Close</button>
+    </div>
+</div>
+
+<footer>
+    <p>Store Management &copy; 2024</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
